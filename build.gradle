@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23//保证按最高的版本进行编译 否则会出现大量的错误-不能使用高版本的方法。
+    buildToolsVersion "23.0.3"//指的是你的版本号。
+//虚拟机--class--dex文件 例如Math函数 studio 写在jdk里面 jdk jre解释器 jvm 先编译然后进行再编译 进程其实就是一个dvm虚拟机
+    defaultConfig {
+        applicationId "com.example.siyan.music"
+        minSdkVersion 16//会出现错误
+        targetSdkVersion 23//使用效果最好的版本 编译idea时候使用的是不表版本 安卓不会做任何兼容性处理。
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 23
+        renderscriptSupportModeEnabled true
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile 'com.android.support:palette-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:percent:23.3.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    compile 'net.steamcrafted:materialiconlib:1.0.3'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.3.0'
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.google.code.gson:gson:2.4'
+}
